@@ -3,6 +3,7 @@ package ParkEaseSheHack.api.ParkEasespringapi;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 public class ParkingSlot {
@@ -11,20 +12,26 @@ public class ParkingSlot {
 
     @Id
     @GeneratedValue
-    private int slotid;
+    private String slotid;
     private Customer customer;
     private boolean isBooked;
-    private int distance;
-   // private List<Direction> directions;
+    private List<Direction> directions;
 
-    public int getSlotid() {
+
+    public String getSlotid() {
         return slotid;
     }
 
-
-
-    public void setSlotid(int slotid) {
+    public void setSlotid(String slotid) {
         this.slotid = slotid;
+    }
+
+    public List<Direction> getDirections() {
+        return directions;
+    }
+
+    public void setDirections(List<Direction> directions) {
+        this.directions = directions;
     }
 
     public Customer getCustomer() {
@@ -54,10 +61,10 @@ public class ParkingSlot {
     @Override
     public String toString() {
         return "ParkingSlot{" +
-                "slotid=" + slotid +
+                "slotid='" + slotid + '\'' +
                 ", customer=" + customer +
                 ", isBooked=" + isBooked +
-               // ", distance=" + distance +
+                ", directions=" + directions +
                 '}';
     }
 }
