@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CustomerdetsRepo extends JpaRepository<Customerdets, Integer> {
+public interface CustomerRepository extends JpaRepository<Customer, String> {
  @Override
- List<Customerdets> findAll();
+ List<Customer> findAll();
 }
