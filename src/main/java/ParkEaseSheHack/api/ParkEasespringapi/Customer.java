@@ -13,13 +13,11 @@ public class Customer {
     private String customerId;
     private String name;
     private String password;
-
-    @OneToMany
-    private List<Car> cars;
+    private String cars;
     Customer(){
 
     }
-    public Customer(String customerId, String name, String password, List<Car> cars) {
+    public Customer(String customerId, String name, String password, String cars) {
         this.customerId = customerId;
         this.name = name;
         this.password = password;
@@ -50,21 +48,12 @@ public class Customer {
         return password;
     }
 
-    public List<Car> getCars() {
+    public String getCars() {
         return cars;
     }
 
-    public void setCars(List<Car> cars) {
+    public void setCars(String cars) {
         this.cars = cars;
-    }
-
-    public boolean isCarExists(String carno){
-        for(Car car:cars){
-            if(car.getCarno().toLowerCase().equals(carno.toLowerCase())){
-                return true;
-            }
-        }
-        return false;
     }
 
     @Override

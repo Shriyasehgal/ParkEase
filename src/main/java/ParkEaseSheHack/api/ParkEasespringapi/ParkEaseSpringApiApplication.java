@@ -10,6 +10,9 @@ public class ParkEaseSpringApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ParkEaseSpringApiApplication.class, args);
+
 	}
+
+
 
 }
